@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from 'src/models/user.class';
 import { Firestore, collection, docData, addDoc } from '@angular/fire/firestore';
+import { MatDialogRef } from '@angular/material/dialog';
 
 
 
@@ -12,16 +13,20 @@ import { Firestore, collection, docData, addDoc } from '@angular/fire/firestore'
 export class DialogAddUserComponent {
   user = new User();
   birthDate: Date = new Date();
+  loading = false;
 
 
-  constructor(private firestore: Firestore) {} 
- 
+  constructor(public dialogRef: MatDialogRef<DialogAddUserComponent>, private firestore: Firestore) { }
+
   saveUser() {
     this.user.birthDate = this.birthDate.getTime();
-
+    this.loading = true;
     const collectionInstance = collection(this.firestore, 'users');
     const userObject = this.user.toJSON();
     addDoc(collectionInstance, userObject);
-    console.log('adding user')
+    setInterval(() => {
+      this.loading = false;
+      this.dialogRef.close();
+    }, 1000);
   }
 }

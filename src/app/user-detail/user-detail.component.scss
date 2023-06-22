@@ -1,0 +1,40 @@
+.user-detail-header{
+    min-height: 250px;
+    background-color: #505160;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 32px;
+
+
+    img {
+        height: 100px;
+        width: 100px;
+        object-fit: cover;
+        border-radius: 100%;
+    }
+
+    .user-details {
+        margin-left: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+            margin-bottom: 0;
+        }
+    }
+}
+
+mat-card-title {
+    padding-left: 16px;
+    padding-top: 12px;
+}
+
+.pin-right-upper-corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px;
+}

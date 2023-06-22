@@ -1,3 +1,6 @@
+mat-toolbar.mat-primary {
+    background-color: #68829E;
+}
 .max-drawer-container {
     height: 100vh;
 }
@@ -48,6 +51,10 @@
 
 .router-container {
     padding-left: 40px;
+    padding-right: 40px;
     padding-top: 16px;
+}
 
+.logo {
+    padding-top: 8px;
 }
